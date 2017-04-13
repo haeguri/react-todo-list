@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { VISIBILITY_FILTERS, addTodo, toggleTodo, setVisibilityFilter } from './actions/actions';
-import AddTodo from './components/AddTodo';
-import TodoList from './components/TodoList';
-import Footer from './components/Footer';
-import '../public/css/App.css';
+import { VISIBILITY_FILTERS, addTodo, toggleTodo, setVisibilityFilter } from '../actions/actions';
+import AddTodo from './AddTodo';
+import TodoList from './TodoList';
+import Footer from './Footer';
+import '../../public/css/App.css';
 
 /* AddTodo -> onAddClick */
 /* TodoList -> onTodoClick, Todo -> onTodoClick*/
