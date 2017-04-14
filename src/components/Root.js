@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { PropTypes } from 'react';
+// import { BrowserRouter as Router, Route, Link} from 'react-router';
 import { Router, Route, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import App from './App';

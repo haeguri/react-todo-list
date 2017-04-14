@@ -31,6 +31,7 @@ class App extends Component {
                 />
                 <TodoList
                     todos={visibleTodos}
+                    filter={this.props.params.filter || 'all'}
                     onTodoClick={(index) => dispatch(toggleTodo(index))}
                 />
                 <Footer
@@ -44,18 +45,18 @@ class App extends Component {
 }
 
 const filterTodos = function(todos, filter) {
-    if(filter === VISIBILITY_FILTERS.SHOW_ALL) {
-        return todos;
-    } else if(filter === VISIBILITY_FILTERS.SHOW_COMPLETED) {
+    if(filter === VISIBILITY_FILTERS.SHOW_COMPLETED) {
         return todos.filter((todo) => todo.completed);
     } else if(filter === VISIBILITY_FILTERS.SHOW_ACTIVE) {
         return todos.filter((todo) => !todo.completed);
+    } else {
+        return todos;
     }
 };
 
-const selector = function(state) {
+const selector = function(state, ownProps) {
     return {
-        visibleTodos: filterTodos(state.todos, state.visibilityFilter),
+        visibleTodos: filterTodos(state.todos, ownProps.params.filter),
         visibilityFilter: state.visibilityFilter
     }
 };

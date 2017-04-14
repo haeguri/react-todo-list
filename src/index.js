@@ -1,14 +1,14 @@
 import React  from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
-import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { addTodo, toggleTodo, setVisibilityFilter, VISIBILITY_FILTERS } from './actions/actions';
 import reducers from './reducers';
 import Root from './components/Root';
 
 let store = createStore(reducers);
 /* test */
+// import App from './components/App';
+// import { Provider } from 'react-redux';
+// import { addTodo, toggleTodo, setVisibilityFilter, VISIBILITY_FILTERS } from './actions/actions';
 // let unsubscribe = store.subscribe(() => console.log('state is', store.getState()));
 // store.dispatch(addTodo('first todo'));
 // store.dispatch(addTodo('second todo'));
@@ -21,5 +21,5 @@ let store = createStore(reducers);
 
 ReactDOM.render(
     <Root store={store}/>,
-  document.getElementById('root')
+    document.getElementById('root')
 );
